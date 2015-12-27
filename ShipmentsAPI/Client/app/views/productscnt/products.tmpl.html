@@ -1,0 +1,14 @@
+<div class="jumbotron row text-center">
+    <div ng-repeat="product in products | searchFor : searchString" class="col-md-3 col-sm-6 hero-feature">
+        <div class="thumbnail">
+            <img src="{{product.picture}}" alt="" href="{{product.source}}">
+            <div class="caption">
+                <h3>{{product.name}}</h3>
+                <p>{{product.description}}</p>
+                <a href="http://{{product.source}}" style="color: blue">{{product.source}}</a>
+                <p>&euro;{{product.price}}</p>
+            </div>
+        </div>
+    </div>
+
+</div>

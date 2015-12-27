@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" ng-controller="mainCtrl">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{{Page.title()}}</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/heroic-features.css" rel="stylesheet">
+    <link href="assets/css/app.css" rel="stylesheet">
+
+
+</head>
+
+<body id="page">
+<!-- Navigation -->
+<!--<header data-navscroll ng-class="{min:boolChangeClass}">-->
+<!--<div id="minNavbar" ng-class="{hidden:!boolChangeClass}">-->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="overflow: auto;">
+    <div class="container {{selectedNav}}">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Melony</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="Where">
+                    <a href="#/search" ng-click="selectedNav='Search'">Search</a>
+                </li>
+                <li class="When">
+                    <a href="#/when" ng-click="selectedNav='When'">When</a>
+                </li>
+                <li class="Why">
+                    <a href="#/Where" ng-click="selectedNav='Where'">Where</a>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right" ng-controller="LoginCtrl">
+                <li ng-show="!auth.profile" class="login">
+                    <button type="button" class="btn btn-link" ng-click="login()" style="{float: none;text-align: center;display: inline-block;}">Sign In</button>
+                </li>
+
+                    <li ng-show="auth.profile" class = "hidden-xs hidden-sm">
+                        <a href="#/login" class="profile-image">
+                            <img ng-src="{{auth.profile.picture}}" class="img-circle" width="30px"> {{auth.profile.nickname}}</a>
+                    </li>
+<!--                    <li ng-show="auth.profile">
+                        <button type="button" class="btn btn-link" ng-click="logout()">Sign Out</button>
+                    </li>-->
+
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<!--    </div>
+    <div ng-class="{hidden:boolChangeClass}">
+        <div class="container maxNavbar">
+            <h2 class="navbar-brand-max" href="#/">Melony</h2>
+        </div>
+    </div>
+</header>-->
+
+<!-- Page Content -->
+<!--<div  class="container" style="all:none;">-->
+<div id="mainContainer" ui-view></div>
+
+<!-- Footer -->
+<hr>
+<div class="footer">
+
+    <div class="row">
+        <div class="col-lg-12">
+            <p>Melony Inc &copy;</p>
+            <a ui-sref="addproduct">Add new product</a>
+        </div>
+    </div>
+
+</div>
+<!--</div>-->
+<!-- /.container -->
+
+<!-- jQuery -->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="bower_components/a0-angular-storage/dist/angular-storage.min.js"></script>
+<script src="bower_components/angular-jwt/dist/angular-jwt.min.js"></script>
+<script src="assets/js/ui-bootstrap-tpls.min.js"></script>
+<script src="assets/js/lock-7.12.min.js"></script>
+<script src="assets/js/auth0-angular-4.js"></script>
+
+<script src="views/main/slider/slider.js"></script>
+<script src="views/login/loginctrl.js"></script>
+<script src="views/productscnt/productsctrl.js"></script>
+<script src="views/addproduct/addproductctrl.js"></script>
+<script src="views/search/search.js"></script>
+<script src="app.js"></script>
+<script src="services/commons.js"></script>
+<script src="config/app.routes.js"></script>
+
+
+</body>
+
+</html>

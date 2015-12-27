@@ -1,0 +1,50 @@
+<div class="container" ng-app="myApp.addproduct" ng-controller="AddProductCtrl">
+    <div class="row">
+        <form role="form">
+            <div class="col-lg-6">
+
+                <div class="form-group">
+                    <label for="InputName">Enter Name</label>
+                    <div class="input-group">
+                        <input ng-model="item.name"  class="form-control" name="InputName" id="InputName" placeholder="Product Name" required>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="Price">Price</label>
+                    <div class="input-group">
+                        <input ng-model="item.price"  class="form-control" name="Price" id="Price" placeholder="Price" required>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="Source">Source</label>
+                    <div class="input-group">
+                        <input ng-model="item.source"  class="form-control" name="Source" id="Source" placeholder="Source" required>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="Picture">URL for Picture</label>
+                    <div class="input-group">
+                        <input ng-model="item.picture"  class="form-control" name="Picture" id="Picture" placeholder="URL for Picture" required>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
+
+                 <div class="form-group">
+                    <label for="Description">Description</label>
+                    <div class="input-group">
+                        <textarea ng-model="item.description" name="Description" id="Description" class="form-control" rows="5" required></textarea>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
+                <input ng-click="addNewRecord()" type="submit" name="submit" id="submit" value="Submit" class="btn btn-info pull-right">
+            </div>
+        </form>
+    </div>
+</div>

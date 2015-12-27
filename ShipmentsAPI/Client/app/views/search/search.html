@@ -1,0 +1,53 @@
+<style>
+    .typeahead-demo .custom-popup-wrapper {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1000;
+        display: none;
+        background-color: #f9f9f9;
+    }
+
+    .typeahead-demo .custom-popup-wrapper > .message {
+        padding: 10px 20px;
+        border-bottom: 1px solid #ddd;
+        color: #868686;
+    }
+
+    .typeahead-demo .custom-popup-wrapper > .dropdown-menu {
+        position: static;
+        float: none;
+        display: block;
+        min-width: 160px;
+        background-color: transparent;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+    }
+</style>
+
+<div class='container-fluid' ng-controller="SearchCtrl">
+
+    <input typeahead-on-select="getSearchResults(asyncSelected)" type="text" ng-model="asyncSelected" placeholder="" uib-typeahead="item for item in getTypeahead($viewValue)" typeahead-loading="loadingLocations" typeahead-no-results="noResults" class="form-control">
+    <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
+    <div ng-show="noResults">
+        <i class="glyphicon glyphicon-remove"></i> No Results Found
+    </div>
+
+</div>
+
+<div class="jumbotron row text-center">
+    <div ng-repeat="product in products" class="col-md-3 col-sm-6 hero-feature">
+        <div class="thumbnail">
+            <img src="{{product.picture}}" alt="" href="{{product.source}}">
+            <div class="caption">
+                <h3>{{product.name}}</h3>
+                <p>{{product.description}}</p>
+                <a href="http://{{product.source}}" style="color: blue">{{product.source}}</a>
+                <p>&euro;{{product.price}}</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+

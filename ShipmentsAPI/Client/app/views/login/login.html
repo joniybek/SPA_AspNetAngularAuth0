@@ -1,0 +1,9 @@
+<div style="text-align: center;">
+<h1 id="header">
+    <img ng-src="{{auth.profile.picture}}" class="img-circle" style="width: 20%"/>
+</h1>
+<h2>Welcome {{auth.profile.nickname}}</h2>
+    <div class="container jumbotron">
+        <p style="overflow: auto;">{{auth.profile}}</p>
+    </div>
+<button class="btn btn-warning" ng-click="logout()" style="margin-bottom: 50px;">Logout</button>
